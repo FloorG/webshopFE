@@ -7,7 +7,7 @@ header {
     margin: 0 auto 2rem auto;
     text-align: center;
     background: linear-gradient(to bottom,
-            #2c0a4c,
+            #B10673,
             #142176);
     padding: 1rem;
     border-bottom-right-radius: 12px;
@@ -21,7 +21,6 @@ img {
 }
 
 h1 {
-    font-size: 2rem;
     margin: 0;
     padding: 0;
     padding-bottom: 1rem;
