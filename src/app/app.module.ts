@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { ProductsComponent } from './products/products.component';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
     HeaderComponent,
     ProductsComponent,
     ShoppingCartComponent,
+    NavbarComponent,
   ],
   providers: [provideHttpClient()],
   bootstrap: [AppComponent],
