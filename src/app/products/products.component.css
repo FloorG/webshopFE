@@ -22,19 +22,20 @@ img {
     min-width: 250px;
     height: min-content;
     text-align: center;
-    padding: 1rem;
+    padding: 1.2rem;
     border-radius: 12px;
     border: 2px solid rgba(0, 0, 0, 0.6);
-    background: #81F4E1;
+    background: #F8F1FF;
 }
 
 .card-body {
-    background: #F8F1FF;
-    padding: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
 
 p {
-    font-size: 0.9rem;
+    font-size: 1rem;
+    padding-bottom: 1rem;
 }
 
 @media (max-width: 660px) {

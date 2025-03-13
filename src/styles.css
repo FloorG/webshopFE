@@ -2,7 +2,11 @@
 .btn-primary {
     background-color: #142176;
     color: white;
-    padding: 0.3rem;
+    padding: 0.5rem;
     border-radius: 12px;
     border: 2px solid rgba(0, 0, 0, 0.6);
+}
+
+a {
+    text-decoration: none;
 }
