@@ -6,5 +6,4 @@ export interface Category {
   description: string;
   imageUrl: string;
   slug: string;
-  products: Product[];
 }
