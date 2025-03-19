@@ -1,41 +1,18 @@
 <div class="cart-container">
   <h2>Winkelwagen</h2>
-
+  @for (product of productsInCart(); track product.id) {
   <div class="cart-item">
     <div class="item-details">
       <img
-        src="assets/images/testSchilderij.png"
-        alt="Laptop"
+        [src]="product.imageUrl"
+        [alt]="'schilderij genaamd ' + product.name"
         class="item-image"
       />
-      <span>Blauw schilderij</span>
+      <span>{{ product.name }}</span>
     </div>
-    <span class="item-price">Price: $1200</span>
+    <span class="item-price">€{{ product.price | number : "1.2-2" }}</span>
   </div>
-
-  <div class="cart-item">
-    <div class="item-details">
-      <img
-        src="assets/images/testSchilderij.png"
-        alt="Laptop"
-        class="item-image"
-      />
-      <span>Blauw schilderij</span>
-    </div>
-    <span class="item-price">Price: $1200</span>
-  </div>
-  <div class="cart-item">
-    <div class="item-details">
-      <img
-        src="assets/images/testSchilderij.png"
-        alt="Laptop"
-        class="item-image"
-      />
-      <span>Blauw schilderij</span>
-    </div>
-    <span class="item-price">Price: $1200</span>
-  </div>
-
-  <div class="cart-total">Total: $2400</div>
+  }
+  <div class="cart-total">Totaal: €{{ totalPrice() | number : "1.2-2" }}</div>
   <a href="#" class="btn btn-primary">Ga naar afrekenen</a>
 </div>

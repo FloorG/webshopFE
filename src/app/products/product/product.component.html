@@ -1,5 +1,9 @@
 <div class="card" style="width: 18rem">
-  <img [src]="product.imageUrl" class="card-img-top" alt="..." />
+  <img
+    [src]="product.imageUrl"
+    class="card-img-top"
+    [alt]="'schilderij genaamd ' + product.name"
+  />
   <div class="card-body">
     <h3 class="card-title">
       {{ product.name }} - €{{ product.price | number : "1.2-2" }}
@@ -7,6 +11,8 @@
     <p class="card-text">
       {{ product.description }}
     </p>
-    <a href="#" class="btn btn-primary">Plaats in winkelwagen </a>
+    <a class="btn btn-primary" (click)="onPutInCart(product)"
+      >Plaats in winkelwagen
+    </a>
   </div>
 </div>

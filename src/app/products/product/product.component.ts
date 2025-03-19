@@ -1,16 +1,7 @@
 import { CommonModule, DecimalPipe } from '@angular/common';
-import {
-  Component,
-  DestroyRef,
-  inject,
-  Input,
-  input,
-  OnInit,
-  output,
-  signal,
-} from '@angular/core';
+import { Component, inject, Input, output, EventEmitter } from '@angular/core';
 import { Product } from '../product.model';
-import { ProductsService } from '../products.service';
+import { ShoppingCartService } from '../../shopping-cart/shopping-cart.service';
 
 @Component({
   selector: 'app-product',
@@ -22,4 +13,10 @@ import { ProductsService } from '../products.service';
 })
 export class ProductComponent {
   @Input() product!: Product;
+  private shoppingCartService = inject(ShoppingCartService);
+  selectProduct = output<Product>();
+
+  onPutInCart(selectedProduct: Product) {
+    this.shoppingCartService.addToCart(selectedProduct);
+  }
 }

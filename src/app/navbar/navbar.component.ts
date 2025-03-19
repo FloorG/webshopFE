@@ -32,7 +32,6 @@ export class NavbarComponent implements OnInit {
     this.isFetching.set(true);
     const subscription = this.categorysService.loadCategorys().subscribe({
       next: (categorys) => {
-        console.log(categorys);
         this.categorys.set(categorys);
       },
       error: (error: Error) => {
@@ -49,7 +48,6 @@ export class NavbarComponent implements OnInit {
   }
 
   selectCategory(categoryId: string) {
-    console.log(categoryId);
     this.selectedCategory.set(categoryId);
   }
 }
