@@ -13,8 +13,8 @@ import { CommonModule, DecimalPipe } from '@angular/common';
 })
 export class ShoppingCartComponent implements OnInit {
   productsInCart = signal<Product[] | undefined>(undefined);
-
   private shoppingCartService = inject(ShoppingCartService);
+
   totalPrice = computed(
     () =>
       this.productsInCart()?.reduce((sum, product) => sum + product.price, 0) ||
@@ -22,6 +22,12 @@ export class ShoppingCartComponent implements OnInit {
   );
 
   ngOnInit() {
+    this.shoppingCartService.loadCart();
+    this.productsInCart.set(this.shoppingCartService.products);
+  }
+
+  onRemoveFromCart(product: Product) {
+    this.shoppingCartService.removeProduct(product);
     this.shoppingCartService.loadCart();
     this.productsInCart.set(this.shoppingCartService.products);
   }

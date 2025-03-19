@@ -11,6 +11,7 @@
       <span>{{ product.name }}</span>
     </div>
     <span class="item-price">€{{ product.price | number : "1.2-2" }}</span>
+    <a class="btn-remove" (click)="onRemoveFromCart(product)">X</a>
   </div>
   }
   <div class="cart-total">Totaal: €{{ totalPrice() | number : "1.2-2" }}</div>
