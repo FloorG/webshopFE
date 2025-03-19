@@ -9,6 +9,7 @@ import { ErrorService } from '../shared/error.service';
   providedIn: 'root',
 })
 export class ProductsService {
+  private errorService = inject(ErrorService);
   private httpClient = inject(HttpClient);
   private rootUrl = 'https://api.gattyspaintings.nl/api/';
 

@@ -3,7 +3,8 @@
   <p class="fallback-text">Producten aan het ophalen...</p>
   } @if (error()) {
   <p class="fallback-text">{{ error() }}</p>
-  } @if (products()) { @for (product of products(); track product.id) {
+  } @if (categoryProducts()) { @for (product of categoryProducts(); track
+  product.id) {
   <div class="card" style="width: 18rem">
     <img [src]="product.imageUrl" class="card-img-top" alt="..." />
     <div class="card-body">
@@ -16,7 +17,7 @@
       <a href="#" class="btn btn-primary">Plaats in winkelwagen </a>
     </div>
   </div>
-  }} @else if (products()?.length === 0) {
+  }} @else if (categoryProducts().length === 0) {
   <p class="fallback-text">
     Er is iets verkeerd gegaan bij het ophalen van de producten. Probeer het
     later nog eens.

@@ -1,15 +1,29 @@
 <nav class="nav">
+  @if (isFetching() && !error()) {
+  <p class="fallback-text">Categorieën aan het ophalen...</p>
+  } @if (error()) {
+  <p class="fallback-text">{{ error() }}</p>
+  } @if (categorys()) {
   <ul>
-    <li class="nav-item">
-      <a class="nav-link" href="#">Aquarel</a>
+    <li class="nav-item home">
+      <a class="nav-link" routerLink="" routerlinkActive="router-link-active">
+        <img
+          src="assets/images/home.png"
+          alt="shoppingcart"
+          class="shoppingcart"
+        />
+      </a>
     </li>
+    @for (category of categorys(); track category.id) {
     <li class="nav-item">
-      <a class="nav-link" href="#">Aryl</a>
+      <a
+        class="nav-link"
+        routerLink="category/{{ category.id }}"
+        (click)="selectCategory(category.id)"
+        >{{ category.name }}</a
+      >
     </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">Pastelkrijt</a>
-    </li>
-
+    }
     <li class="nav-item cart">
       <a
         class="nav-link"
@@ -24,4 +38,5 @@
       </a>
     </li>
   </ul>
+  }
 </nav>

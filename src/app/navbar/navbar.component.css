@@ -45,13 +45,31 @@ li:hover a {
     color: #B10673;
 }
 
+.home {
+margin-right: auto;
+background-color: #F8F1FF;
+border-radius: 12px;
+}
+
+.home:hover {
+background-color: #B10673;
+}
+
 .cart {
     margin-left: auto;
     background-color: #F8F1FF;
     border-radius: 12px;
 }
 
+.cart:hover {
+    background-color: #B10673;
+}
+
 .shoppingcart {
     width: 30px;
     height: auto;
+}
+
+.fallback-text {
+    text-align: center;
 }
