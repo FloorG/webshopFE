@@ -7,6 +7,12 @@
     border: 2px solid rgba(0, 0, 0, 0.6);
 }
 
+.btn-primary:hover {
+    background-color: #232f7a;
+    border-width: 3px;
+    cursor: pointer;
+}
+
 a {
     text-decoration: none;
 }

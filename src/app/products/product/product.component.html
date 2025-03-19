@@ -11,8 +11,12 @@
     <p class="card-text">
       {{ product.description }}
     </p>
-    <a class="btn btn-primary" (click)="onPutInCart(product)"
-      >Plaats in winkelwagen
+    <a class="btn btn-primary" (click)="onSelectProduct(product)"
+      >{{
+        isInCart(product)
+          ? "Verwijder uit winkelwagen"
+          : "Plaats in winkelwagen"
+      }}
     </a>
   </div>
 </div>

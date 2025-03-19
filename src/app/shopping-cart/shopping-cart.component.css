@@ -62,7 +62,15 @@ span {
     display: block;
     text-align: center;
     padding: 5px;
-    background-color: red;
+    padding-left: 7px;
+    padding-right: 7px;
+    background-color: rgb(161, 0, 0);
     margin-left: 10px;
     color: white;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+.btn-remove:hover {
+    background-color: rgb(212, 3, 3);
 }
