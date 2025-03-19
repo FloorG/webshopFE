@@ -2,13 +2,14 @@ import { Component, DestroyRef, inject, OnInit, signal } from '@angular/core';
 import { ProductsService } from './products.service';
 import { Product } from './product.model';
 import { CommonModule, DecimalPipe } from '@angular/common';
+import { ProductComponent } from './product/product.component';
 
 @Component({
   selector: 'app-products',
   standalone: true,
   templateUrl: './products.component.html',
   styleUrl: './products.component.css',
-  imports: [CommonModule],
+  imports: [CommonModule, ProductComponent],
   providers: [DecimalPipe],
 })
 export class ProductsComponent implements OnInit {

@@ -11,11 +11,12 @@ import { ProductsService } from '../products.service';
 import { map } from 'rxjs';
 import { ResolveFn } from '@angular/router';
 import { CommonModule, DecimalPipe } from '@angular/common';
+import { ProductComponent } from '../product/product.component';
 
 @Component({
   selector: 'app-products-category',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, ProductComponent],
   templateUrl: './products-category.component.html',
   styleUrl: './products-category.component.css',
   providers: [DecimalPipe],

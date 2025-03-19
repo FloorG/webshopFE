@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, DestroyRef, inject, OnInit } from '@angular/core';
+import { ShoppingCartService } from './shopping-cart.service';
 
 @Component({
   selector: 'app-shopping-cart',
@@ -7,4 +8,9 @@ import { Component } from '@angular/core';
   styleUrl: './shopping-cart.component.css',
   imports: [],
 })
-export class ShoppingCartComponent {}
+export class ShoppingCartComponent implements OnInit {
+  private shoppingCartService = inject(ShoppingCartService);
+  private destroyRef = inject(DestroyRef);
+
+  ngOnInit() {}
+}
