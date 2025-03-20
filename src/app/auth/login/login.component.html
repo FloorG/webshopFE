@@ -1,6 +1,6 @@
 <div class="login">
   <h2>Log hier in</h2>
-  <form>
+  <form (ngSubmit)="onLogin()">
     <p>
       <label for="email">E-mailadres</label>
       <input type="text" id="email" name="email" [(ngModel)]="enteredEmail" />
@@ -16,9 +16,20 @@
       />
     </p>
 
+    @if(!validInputs()){
+    <p class="warning">Vul alle velden in</p>
+    }
+
     <p class="actions">
-      <a routerLink="../">Cancel</a>
+      <a routerLink="../" routerlinkActive="router-link-active">Cancel</a>
       <button type="submit">Login</button>
     </p>
   </form>
+
+  <div class="register">
+    <p>Nog geen account?</p>
+    <a routerLink="/register" routerlinkActive="router-link-active">
+      <button>Registreer hier</button>
+    </a>
+  </div>
 </div>

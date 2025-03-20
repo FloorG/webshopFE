@@ -27,9 +27,9 @@ export class AuthService {
       );
   }
 
-  login(credentials: { email: string; password: string }) {
+  login(userCredentials: { email: string; password: string }) {
     return this.httpClient
-      .post<{ token: string }>(this.rootUrl + '/auth/login', credentials)
+      .post<{ token: string }>(this.rootUrl + 'auth/login', userCredentials)
       .pipe(
         catchError((error) => {
           console.log(error);

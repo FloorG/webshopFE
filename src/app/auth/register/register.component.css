@@ -72,8 +72,28 @@ button[type="submit"] {
     transition: all 0.3s ease;
 }
 
-button[type="submit"]:hover,
-button[type="submit"]:active {
+button[type="submit"]:hover {
+    background-color: #895cce;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.3);
+}
+
+.login {
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.login p {
+    color: #F8F1FF;
+}
+
+.login button {
+    background-color: #F8F1FF;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.login button:hover {
     background-color: #895cce;
     box-shadow: 0 1px 6px rgba(0, 0, 0, 0.3);
 }

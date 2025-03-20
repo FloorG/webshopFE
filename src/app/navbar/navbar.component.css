@@ -51,13 +51,19 @@ border-radius: 12px;
 background-color: #B10673;
 }
 
-.cart {
+.right-nav {
+    display: flex;
+    gap: 1rem;
+    margin-left: auto;
+}
+
+.cart, .user {
     margin-left: auto;
     background-color: #F8F1FF;
     border-radius: 12px;
 }
 
-.cart:hover {
+.cart:hover, .user:hover {
     background-color: #B10673;
 }
 
@@ -68,4 +74,44 @@ background-color: #B10673;
 
 .fallback-text {
     text-align: center;
+}
+
+@media (max-width: 509px) {
+    nav {
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem 0;
+    }
+
+    ul {
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+    }
+
+    .nav-item {
+        width: 100%;
+        text-align: center;
+    }
+
+    .top-nav {
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    .category-nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem;
+    }
+
+    .cart,
+    .user,
+    .home {
+        margin: 0;
+        background-color: #6E8898;
+    }
 }

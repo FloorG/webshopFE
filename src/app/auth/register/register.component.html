@@ -46,8 +46,15 @@
     }
 
     <p class="actions">
-      <a routerLink="../">Cancel</a>
+      <a routerLink="../" routerlinkActive="router-link-active">Cancel</a>
       <button type="submit">Register</button>
     </p>
   </form>
+
+  <div class="login">
+    <p>Al een account?</p>
+    <a routerLink="/login" routerlinkActive="router-link-active">
+      <button>Log hier in</button>
+    </a>
+  </div>
 </div>
