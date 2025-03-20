@@ -10,6 +10,7 @@ import { RegisterComponent } from './auth/register/register.component';
 import { LoginComponent } from './auth/login/login.component';
 import { AccountComponent } from './auth/account/account.component';
 import { AdminComponent } from './auth/admin/admin.component';
+import { AdminGuard } from './admin.guard';
 
 export const routes: Routes = [
   {
@@ -31,6 +32,7 @@ export const routes: Routes = [
   {
     path: 'adminPortaal',
     component: AdminComponent,
+    canActivate: [AdminGuard],
   },
   {
     path: 'winkelwagen',
