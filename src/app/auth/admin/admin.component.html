@@ -1,0 +1,52 @@
+<div class="new-product">
+  <h2>Maak hier een nieuw porduct aan</h2>
+  <form (ngSubmit)="onCreateProduct()">
+    <p>
+      <label for="name">Productnaam</label>
+      <input type="text" id="name" name="name" [(ngModel)]="productName" />
+    </p>
+    <p>
+      <label for="description">Beschrijving</label>
+      <input
+        type="text"
+        id="description"
+        name="description"
+        [(ngModel)]="productDescription"
+      />
+    </p>
+    <p>
+      <label for="price">Prijs</label>
+      <input type="number" id="price" name="price" [(ngModel)]="productPrice" />
+    </p>
+
+    <p>
+      <label for="imageUrl">Afbeelding</label>
+      <input
+        type="text"
+        id="imageUrl"
+        name="imageUrl"
+        [(ngModel)]="productImageUrl"
+      />
+    </p>
+
+    <p>
+      <label for="category">Category</label>
+      <select id="category" name="category" [(ngModel)]="selectedCategory">
+        @for (category of categorys(); track category.id) {
+        <option [ngValue]="category">
+          {{ category.name }}
+        </option>
+        }
+      </select>
+    </p>
+
+    @if(!validInputs()){
+    <p class="warning">Vul alle velden in</p>
+    }
+
+    <p class="actions">
+      <a routerLink="../" routerlinkActive="router-link-active">Cancel</a>
+      <button type="submit">Maak product aan</button>
+    </p>
+  </form>
+</div>

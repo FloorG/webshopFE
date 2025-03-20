@@ -25,6 +25,7 @@ export class NavbarComponent implements OnInit {
   isFetching = signal(false);
   error = signal('');
   selectedCategory = signal<string | null>(null);
+  userRole = signal<string | null>(null);
 
   private categorysService = inject(CategorysService);
   private authService = inject(AuthService);
@@ -34,6 +35,7 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit() {
     this.isFetching.set(true);
+    this.userRole.set(this.authService.getUserRole());
     const subscription = this.categorysService.loadCategorys().subscribe({
       next: (categorys) => {
         this.categorys.set(categorys);

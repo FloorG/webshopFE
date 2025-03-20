@@ -4,6 +4,7 @@ import { Product } from './product.model';
 import { HttpClient } from '@angular/common/http';
 import { map, catchError, throwError, tap } from 'rxjs';
 import { ErrorService } from '../shared/error.service';
+import { NewProduct } from '../auth/admin/newProduct.model';
 
 @Injectable({
   providedIn: 'root',
@@ -26,5 +27,9 @@ export class ProductsService {
         );
       })
     );
+  }
+
+  createProduct(product: NewProduct) {
+    return this.httpClient.post<Product>(this.rootUrl + 'product', product);
   }
 }

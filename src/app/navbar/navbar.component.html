@@ -22,6 +22,7 @@
     }
 
     <div class="right-nav">
+      @if (userRole() !== 'ADMIN') {
       <li class="nav-item user">
         <a
           class="nav-link"
@@ -35,7 +36,6 @@
           />
         </a>
       </li>
-
       <li class="nav-item cart">
         <a
           class="nav-link"
@@ -49,6 +49,21 @@
           />
         </a>
       </li>
+      } @if (userRole() === 'ADMIN') {
+      <li class="nav-item user">
+        <a
+          class="nav-link"
+          routerLink="/adminPortaal"
+          routerlinkActive="router-link-active"
+        >
+          <img
+            src="assets/images/shop.png"
+            alt="user avatar"
+            class="nav-image"
+          />
+        </a>
+      </li>
+      }
     </div>
   </ul>
   }

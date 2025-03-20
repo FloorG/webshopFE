@@ -9,6 +9,7 @@ import { CheckoutComponent } from './shopping-cart/checkout/checkout.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { LoginComponent } from './auth/login/login.component';
 import { AccountComponent } from './auth/account/account.component';
+import { AdminComponent } from './auth/admin/admin.component';
 
 export const routes: Routes = [
   {
@@ -26,6 +27,10 @@ export const routes: Routes = [
   {
     path: 'mijnAccount',
     component: AccountComponent,
+  },
+  {
+    path: 'adminPortaal',
+    component: AdminComponent,
   },
   {
     path: 'winkelwagen',

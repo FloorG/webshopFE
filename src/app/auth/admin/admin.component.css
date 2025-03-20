@@ -1,0 +1,134 @@
+.new-product {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background: #6E8898;
+    padding: 1rem;
+    border-radius: 12px;
+    width: 80%;
+    margin: auto;
+}
+
+h2 {
+    margin: 0;
+    color: #F8F1FF;
+}
+
+form {
+    width: 60%;
+    align-items: center;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    font-size: 0.85rem;
+    color: #F8F1FF;
+    margin-bottom: 0.25rem;
+}
+
+input,
+textarea {
+    width: 100%;
+    font: inherit;
+    padding: 0.25rem 0.25rem;
+    border-radius: 4px;
+    border: 1px solid rgb(159, 136, 186);
+    background-color: #F8F1FF;
+}
+
+select {
+    width: 100%;
+    font: inherit;
+    padding: 0.25rem 0.25rem;
+    border-radius: 4px;
+    border: 1px solid rgb(159, 136, 186);
+    background-color: #F8F1FF;
+    color: #333;
+    appearance: none;
+}
+
+select:focus {
+    outline: none;
+    border-color: #895cce;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.3);
+}
+
+.actions {
+    margin: 1rem 0 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+button {
+    font: inherit;
+    cursor: pointer;
+    border: none;
+    padding: 0.35rem 1.25rem;
+    border-radius: 4px;
+    background-color: transparent;
+}
+
+a {
+    color: #F8F1FF;
+    text-decoration: none;
+}
+
+a:hover,
+a:active {
+    color: #d0c2e1;
+    cursor: pointer;
+}
+
+button[type="submit"] {
+    background-color: #F8F1FF;
+    transition: all 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #895cce;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.3);
+}
+
+.login {
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.login p {
+    color: #F8F1FF;
+}
+
+.login button {
+    background-color: #F8F1FF;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.login button:hover {
+    background-color: #895cce;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.3);
+}
+
+li {
+    list-style: square;
+    margin-top: 5px;
+    color: #5d0909;
+    font-size: small;
+}
+
+.warning {
+    color: #5d0909;
+    font-size: 15px;
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    dialog {
+        padding: 2rem;
+    }
+}

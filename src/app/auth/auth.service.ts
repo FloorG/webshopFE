@@ -47,7 +47,9 @@ export class AuthService {
   }
 
   getTokenExpiration(token: string): Date | null {
-    if (!token) return null;
+    if (!token) {
+      return null;
+    }
 
     try {
       const payloadBase64 = token.split('.')[1];
@@ -58,6 +60,24 @@ export class AuthService {
         return new Date(payload.exp * 1000);
       }
       return null;
+    } catch (error) {
+      console.error('Invalid token', error);
+      return null;
+    }
+  }
+
+  getUserRole(): string | null {
+    const token = localStorage.getItem('token');
+    if (!token) {
+      return null;
+    }
+
+    try {
+      const payloadBase64 = token.split('.')[1];
+      const payloadJson = atob(payloadBase64);
+      const payload = JSON.parse(payloadJson);
+
+      return payload.roles ?? null;
     } catch (error) {
       console.error('Invalid token', error);
       return null;
