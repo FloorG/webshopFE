@@ -13,6 +13,10 @@ import { AdminComponent } from './auth/admin/admin.component';
 
 export const routes: Routes = [
   {
+    path: '**',
+    component: ProductsComponent,
+  },
+  {
     path: '',
     component: ProductsComponent,
   },
