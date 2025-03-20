@@ -11,6 +11,7 @@ import { RouterLink } from '@angular/router';
 
 import { CategorysService } from '../products/categorys.service';
 import { Category } from '../products/category.model';
+import { AuthService } from '../auth/auth.service';
 
 @Component({
   selector: 'app-navbar',
@@ -26,7 +27,10 @@ export class NavbarComponent implements OnInit {
   selectedCategory = signal<string | null>(null);
 
   private categorysService = inject(CategorysService);
+  private authService = inject(AuthService);
   private destroyRef = inject(DestroyRef);
+
+  userLoggedIn = this.authService.userLoggedIn;
 
   ngOnInit() {
     this.isFetching.set(true);

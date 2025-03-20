@@ -37,7 +37,7 @@ export class ShoppingCartService {
   }
 
   clearProducts() {
-    localStorage.clear();
+    localStorage.removeItem('cart_items');
   }
 
   private errorService = inject(ErrorService);

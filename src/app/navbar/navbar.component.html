@@ -25,7 +25,7 @@
       <li class="nav-item user">
         <a
           class="nav-link"
-          routerLink="login"
+          [routerLink]="userLoggedIn() ? '/mijnAccount' : '/login'"
           routerlinkActive="router-link-active"
         >
           <img

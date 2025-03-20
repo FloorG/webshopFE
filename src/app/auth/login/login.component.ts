@@ -1,7 +1,7 @@
 import { Component, inject, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { AuthService } from '../auth.service';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -15,6 +15,7 @@ export class LoginComponent {
   validInputs = signal(true);
 
   private authService = inject(AuthService);
+  private router = inject(Router);
 
   onLogin() {
     this.validInputs.set(this.validateInputs());
@@ -30,8 +31,15 @@ export class LoginComponent {
 
     this.authService.login(userCredentials).subscribe({
       next: (resData) => {
-        console.log('yay');
         localStorage.setItem('token', resData.token);
+        const expirationDate = this.authService.getTokenExpiration(
+          resData.token
+        );
+        this.authService.userLoggedIn.set(true);
+        if (expirationDate) {
+          localStorage.setItem('expires_at', expirationDate.toISOString());
+        }
+        this.router.navigateByUrl('/mijnAccount');
       },
       error: (error) => {
         console.log(error);

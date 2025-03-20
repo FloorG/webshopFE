@@ -1,0 +1,13 @@
+<div class="account">
+  <h2>Jouw gegevens</h2>
+
+  <div class="account-info">
+    <p><strong>E-mailadres:</strong> {{ user?.email }}</p>
+    <p><strong>Voornaam:</strong> {{ user?.firstName }}</p>
+    <p><strong>Achternaam:</strong> {{ user?.lastName }}</p>
+  </div>
+
+  <a routerLink="/login" routerlinkActive="router-link-active">
+    <button (click)="onLogOut()">Log uit</button>
+  </a>
+</div>

@@ -15,7 +15,6 @@ export class SuccessModalComponent {
   @Output() closeModal = new EventEmitter<void>();
 
   onClose() {
-    console.log('onClose');
     this.closeModal.emit();
   }
 }

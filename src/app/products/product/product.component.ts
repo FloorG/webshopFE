@@ -30,7 +30,6 @@ export class ProductComponent {
   }
 
   onSelectProduct(selectedProduct: Product) {
-    console.log(this.isInCart(selectedProduct));
     if (this.isInCart(selectedProduct)) {
       this.shoppingCartService.removeProduct(selectedProduct);
     } else {

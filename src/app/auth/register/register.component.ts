@@ -40,7 +40,6 @@ export class RegisterComponent {
 
       this.authService.register(userData).subscribe({
         next: (resData) => {
-          console.log('registered');
           localStorage.setItem('token', resData.token);
         },
         error: (error) => {
