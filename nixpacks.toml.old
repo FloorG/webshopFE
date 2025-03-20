@@ -1,6 +1,0 @@
-# nixpacks.toml
-[phases.setup]
-nixPkgs = ["nginx"]
-
-[start]
-cmds = ["nginx -c /nginx.conf -g 'daemon off;'"]
