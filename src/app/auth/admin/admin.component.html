@@ -1,3 +1,17 @@
+@if (successfullyAddedProduct()) {
+<app-success-modal
+  title="Het product is succesvol aangemaakt!"
+  message="Het product is toegevoegd aan de website"
+  (closeModal)="resetSignals()"
+/>
+} @if (unsuccessfullyAddedProduct()) {
+<app-error-modal
+  title="Oeps er is iets misgegaan"
+  message="Er is een fout opgestreden bij het maken van het product. Probeer het later nog eens"
+  (closeModal)="resetSignals()"
+/>
+}
+
 <div class="new-product">
   <h2>Maak hier een nieuw porduct aan</h2>
   <form (ngSubmit)="onCreateProduct()">

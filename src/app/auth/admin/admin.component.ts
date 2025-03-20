@@ -4,11 +4,12 @@ import { FormsModule } from '@angular/forms';
 import { NewProduct } from './newProduct.model';
 import { Category } from '../../products/category.model';
 import { CategorysService } from '../../products/categorys.service';
-import { AuthService } from '../auth.service';
+import { SuccessModalComponent } from '../../shared/modal/success-modal/success-modal.component';
+import { ErrorModalComponent } from '../../shared/modal/error-modal/error-modal.component';
 
 @Component({
   selector: 'app-admin',
-  imports: [FormsModule],
+  imports: [FormsModule, SuccessModalComponent, ErrorModalComponent],
   templateUrl: './admin.component.html',
   styleUrl: './admin.component.css',
 })
@@ -20,10 +21,11 @@ export class AdminComponent implements OnInit {
   productImageUrl = signal('');
   validInputs = signal(true);
   selectedCategory = signal<Category | null>(null);
-
   categorys = signal<Category[] | undefined>(undefined);
   isFetching = signal(false);
   error = signal('');
+  successfullyAddedProduct = signal(false);
+  unsuccessfullyAddedProduct = signal(false);
 
   private categorysService = inject(CategorysService);
   private destroyRef = inject(DestroyRef);
@@ -44,10 +46,11 @@ export class AdminComponent implements OnInit {
 
     this.productsService.createProduct(newProduct).subscribe({
       next: (product) => {
-        console.log('Product created: ', product);
+        this.successfullyAddedProduct.set(true);
       },
       error: (error) => {
         console.log(error);
+        this.unsuccessfullyAddedProduct.set(true);
       },
     });
   }
@@ -78,10 +81,15 @@ export class AdminComponent implements OnInit {
       !this.productImageUrl().trim() ||
       !this.selectedCategory() ||
       !this.productPrice() ||
-      this.productPrice() != 0
+      this.productPrice() == 0
     ) {
       return false;
     }
     return true;
+  }
+
+  resetSignals() {
+    this.successfullyAddedProduct.set(false);
+    this.unsuccessfullyAddedProduct.set(false);
   }
 }

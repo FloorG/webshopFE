@@ -18,10 +18,8 @@ export class CheckoutComponent {
   enteredAddress = signal('');
   enteredCity = signal('');
   enteredZipCode = signal('');
-
   successfullyCheckedOut = signal(false);
   unsuccessfullyCheckedOut = signal(false);
-
   private shoppingCartService = inject(ShoppingCartService);
 
   onSubmitOrder() {
@@ -47,6 +45,7 @@ export class CheckoutComponent {
         this.shoppingCartService.clearProducts();
       },
       error: (error) => {
+        console.log(error);
         this.unsuccessfullyCheckedOut.set(true);
       },
     });
