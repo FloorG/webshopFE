@@ -56,4 +56,8 @@ export class NavbarComponent implements OnInit {
   selectCategory(categoryId: string) {
     this.selectedCategory.set(categoryId);
   }
+
+  onLogOut() {
+    this.authService.logout();
+  }
 }

@@ -57,13 +57,13 @@ background-color: #B10673;
     margin-left: auto;
 }
 
-.cart, .user {
+.cart, .user, .logout {
     margin-left: auto;
     background-color: #F8F1FF;
     border-radius: 12px;
 }
 
-.cart:hover, .user:hover {
+.cart:hover, .user:hover, .logout:hover {
     background-color: #B10673;
 }
 
