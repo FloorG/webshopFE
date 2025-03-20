@@ -1,7 +1,7 @@
 import { Component, inject, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { AuthService } from '../auth.service';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -20,6 +20,7 @@ export class RegisterComponent {
   validInputs = signal(true);
 
   private authService = inject(AuthService);
+  private router = inject(Router);
 
   onRegister() {
     const password = this.enteredPassword();
@@ -41,6 +42,7 @@ export class RegisterComponent {
       this.authService.register(userData).subscribe({
         next: (resData) => {
           localStorage.setItem('token', resData.token);
+          this.router.navigateByUrl('/');
         },
         error: (error) => {
           console.log(error);

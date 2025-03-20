@@ -39,7 +39,7 @@ export class LoginComponent {
         if (expirationDate) {
           localStorage.setItem('expires_at', expirationDate.toISOString());
         }
-        this.router.navigateByUrl('/mijnAccount');
+        this.router.navigateByUrl('/');
       },
       error: (error) => {
         console.log(error);

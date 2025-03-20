@@ -9,7 +9,7 @@
     <p>
       <label for="password">Wachtwoord</label>
       <input
-        type="text"
+        type="password"
         id="password"
         name="password"
         [(ngModel)]="enteredPassword"
@@ -22,9 +22,7 @@
 
     <p class="actions">
       <a routerLink="../" routerlinkActive="router-link-active">Cancel</a>
-      <a routerLink="/" routerlinkActive="router-link-active"
-        ><button type="submit">Login</button></a
-      >
+      <button type="submit">Login</button>
     </p>
   </form>
 
