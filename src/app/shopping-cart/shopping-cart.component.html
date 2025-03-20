@@ -15,5 +15,10 @@
   </div>
   }
   <div class="cart-total">Totaal: €{{ totalPrice() | number : "1.2-2" }}</div>
-  <a href="#" class="btn btn-primary">Ga naar afrekenen</a>
+  <a
+    routerLink="../afrekenen"
+    routerlinkActive="router-link-active"
+    class="btn btn-primary"
+    >Ga naar afrekenen</a
+  >
 </div>

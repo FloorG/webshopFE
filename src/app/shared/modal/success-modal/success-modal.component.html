@@ -1,0 +1,18 @@
+<app-modal class="test">
+  <div class="modal">
+    <div class="success">
+      <h2>{{ title() }}</h2>
+      <p>{{ message() }}</p>
+    </div>
+    <div class="confirmation-actions">
+      <button
+        class="button"
+        routerLink="/"
+        routerlinkActive="router-link-active"
+        (click)="onClose()"
+      >
+        Okay
+      </button>
+    </div>
+  </div>
+</app-modal>

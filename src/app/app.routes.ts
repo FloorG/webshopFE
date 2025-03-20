@@ -5,6 +5,7 @@ import {
   ProductsCategoryComponent,
   resolveCategoryProducts,
 } from './products/products-category/products-category.component';
+import { CheckoutComponent } from './shopping-cart/checkout/checkout.component';
 
 export const routes: Routes = [
   {
@@ -14,6 +15,10 @@ export const routes: Routes = [
   {
     path: 'winkelwagen',
     component: ShoppingCartComponent,
+  },
+  {
+    path: 'afrekenen',
+    component: CheckoutComponent,
   },
   {
     path: 'category/:categoryId',

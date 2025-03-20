@@ -2,13 +2,14 @@ import { Component, computed, inject, OnInit, signal } from '@angular/core';
 import { ShoppingCartService } from './shopping-cart.service';
 import { Product } from '../products/product.model';
 import { CommonModule, DecimalPipe } from '@angular/common';
+import { RouterLink, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-shopping-cart',
   standalone: true,
   templateUrl: './shopping-cart.component.html',
   styleUrl: './shopping-cart.component.css',
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink],
   providers: [DecimalPipe],
 })
 export class ShoppingCartComponent implements OnInit {

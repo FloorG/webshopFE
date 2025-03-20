@@ -1,0 +1,77 @@
+@if (successfullyCheckedOut()) {
+<app-success-modal
+  title="Uw bestelling is succesvol geplaatst!"
+  message="Uw bestelling wordt zo snel mogelijk ingepakt en naar u verzonden"
+  (closeModal)="resetSignals()"
+/>
+} @if (unsuccessfullyCheckedOut()) {
+<app-error-modal
+  title="Oeps er is iets misgegaan"
+  message="Er is een fout opgestreden bij het plaatsen van uw bestelling. Probeer het later nog eens"
+  (closeModal)="resetSignals()"
+/>
+}
+
+<div class="check-out">
+  <h2>Vul hier uw gegevens in</h2>
+  <form (ngSubmit)="onSubmitOrder()">
+    <p>
+      <label for="firstName">Voornaam</label>
+      <input
+        type="text"
+        id="firstName"
+        name="firstName"
+        [(ngModel)]="enteredFirstName"
+      />
+    </p>
+    <p>
+      <label for="lastName">Achternaam</label>
+      <input
+        type="text"
+        id="lastName"
+        name="lastName"
+        [(ngModel)]="enteredLastName"
+      />
+    </p>
+    <p>
+      <label for="email">E-mailadres</label>
+      <input type="text" id="email" name="email" [(ngModel)]="enteredEmail" />
+    </p>
+    <p>
+      <label for="city">Woonplaats</label>
+      <input type="text" id="city" name="city" [(ngModel)]="enteredCity" />
+    </p>
+    <p>
+      <label for="zipCode">Postcode</label>
+      <input
+        type="text"
+        id="zipCode"
+        name="zipCode"
+        [(ngModel)]="enteredZipCode"
+      />
+    </p>
+    <p>
+      <label for="address">Adres</label>
+      <input
+        type="text"
+        id="address"
+        name="address"
+        [(ngModel)]="enteredAddress"
+      />
+    </p>
+    <p>
+      <label for="houseNumber">Huisnummer</label>
+      <input
+        type="text"
+        id="houseNumber"
+        name="houseNumber"
+        [(ngModel)]="enteredHouseNumber"
+      />
+    </p>
+
+    <p class="actions">
+      <a routerLink="../">Cancel</a>
+      <button type="submit">Bestel</button>
+    </p>
+  </form>
+</div>
