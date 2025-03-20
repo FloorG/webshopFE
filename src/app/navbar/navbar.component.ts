@@ -7,7 +7,7 @@ import {
   Output,
   signal,
 } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 import { CategorysService } from '../products/categorys.service';
 import { Category } from '../products/category.model';
@@ -18,7 +18,7 @@ import { AuthService } from '../auth/auth.service';
   standalone: true,
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css',
-  imports: [RouterLink],
+  imports: [],
 })
 export class NavbarComponent implements OnInit {
   categorys = signal<Category[] | undefined>(undefined);
@@ -32,6 +32,7 @@ export class NavbarComponent implements OnInit {
   private destroyRef = inject(DestroyRef);
 
   userLoggedIn = this.authService.userLoggedIn;
+  constructor(private router: Router) {}
 
   ngOnInit() {
     this.isFetching.set(true);
@@ -59,5 +60,9 @@ export class NavbarComponent implements OnInit {
 
   onLogOut() {
     this.authService.logout();
+  }
+
+  navigateTo(route: string) {
+    this.router.navigate([route]);
   }
 }

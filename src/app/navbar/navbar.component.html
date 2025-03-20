@@ -5,77 +5,44 @@
   <p class="fallback-text">{{ error() }}</p>
   } @if (categorys()) {
   <ul>
-    <li class="nav-item home">
-      <a class="nav-link" routerLink="" routerlinkActive="router-link-active">
-        <img src="assets/images/home.png" alt="home" class="nav-image" />
-      </a>
+    <li class="nav-item home" (click)="navigateTo('')">
+      <img src="assets/images/home.png" alt="home" class="nav-image" />
     </li>
     @for (category of categorys(); track category.id) {
-    <li class="nav-item">
-      <a
-        class="nav-link"
-        routerLink="category/{{ category.id }}"
-        (click)="selectCategory(category.id)"
-        >{{ category.name }}</a
-      >
+    <li class="nav-item" (click)="navigateTo('category/' + category.id)">
+      {{ category.name }}
     </li>
     }
 
     <div class="right-nav">
       @if (userRole() !== 'ADMIN') {
-      <li class="nav-item user">
-        <a
-          class="nav-link"
-          [routerLink]="userLoggedIn() ? '/mijnAccount' : '/login'"
-          routerlinkActive="router-link-active"
-        >
-          <img
-            src="assets/images/user-avatar.png"
-            alt="user avatar"
-            class="nav-image"
-          />
-        </a>
+      <li
+        class="nav-item user"
+        (click)="navigateTo(userLoggedIn() ? '/mijnAccount' : '/login')"
+      >
+        <img
+          src="assets/images/user-avatar.png"
+          alt="user avatar"
+          class="nav-image"
+        />
       </li>
-      <li class="nav-item cart">
-        <a
-          class="nav-link"
-          routerLink="winkelwagen"
-          routerlinkActive="router-link-active"
-        >
-          <img
-            src="assets/images/shopping-cart.png"
-            alt="shoppingcart"
-            class="nav-image"
-          />
-        </a>
+      <li class="nav-item cart" (click)="navigateTo('winkelwagen')">
+        <img
+          src="assets/images/shopping-cart.png"
+          alt="shoppingcart"
+          class="nav-image"
+        />
       </li>
       } @if (userRole() === 'ADMIN') {
-      <li class="nav-item user">
-        <a
-          class="nav-link"
-          routerLink="/adminPortaal"
-          routerlinkActive="router-link-active"
-        >
-          <img
-            src="assets/images/shop.png"
-            alt="user avatar"
-            class="nav-image"
-          />
-        </a>
+      <li class="nav-item user" (click)="navigateTo('/adminPortaal')">
+        <img src="assets/images/shop.png" alt="user avatar" class="nav-image" />
       </li>
-      <li class="nav-item logout">
-        <a
-          class="nav-link"
-          routerLink="/login"
-          routerlinkActive="router-link-active"
-          (click)="onLogOut()"
-        >
-          <img
-            src="assets/images/logout.png"
-            alt="user avatar"
-            class="nav-image"
-          />
-        </a>
+      <li class="nav-item logout" (click)="onLogOut(); navigateTo('/login')">
+        <img
+          src="assets/images/logout.png"
+          alt="user avatar"
+          class="nav-image"
+        />
       </li>
       }
     </div>

@@ -23,21 +23,15 @@ ul {
     align-items: center;
 }
 
-a {
-    color: #F8F1FF;
-}
-
 li {
     padding: 0.5rem;
     justify-content: center;
+    color: #F8F1FF;
 }
 
 li:hover {
     cursor: pointer;
     background-color: #F8F1FF;
-}
-
-li:hover a {
     color: #B10673;
 }
 
