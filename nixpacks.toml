@@ -9,5 +9,5 @@ cmds = ["npm run build"]
 
 [start]
 cmds = [
-  "nginx -c /nginx.conf -g 'daemon off;' & npm run start"
+  "nginx -c /app/nginx.conf -g 'daemon off;' & npm run start"
 ]
