@@ -6,11 +6,16 @@ import {
   resolveCategoryProducts,
 } from './products/products-category/products-category.component';
 import { CheckoutComponent } from './shopping-cart/checkout/checkout.component';
+import { RegisterComponent } from './auth/register/register.component';
 
 export const routes: Routes = [
   {
     path: '',
     component: ProductsComponent,
+  },
+  {
+    path: 'register',
+    component: RegisterComponent,
   },
   {
     path: 'winkelwagen',

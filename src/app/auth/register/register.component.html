@@ -1,0 +1,53 @@
+<div class="register">
+  <h2>Maak hier een account aan</h2>
+  <form (ngSubmit)="onRegister()">
+    <p>
+      <label for="firstName">Voornaam</label>
+      <input
+        type="text"
+        id="firstName"
+        name="firstName"
+        [(ngModel)]="enteredFirstName"
+      />
+    </p>
+    <p>
+      <label for="lastName">Achternaam</label>
+      <input
+        type="text"
+        id="lastName"
+        name="lastName"
+        [(ngModel)]="enteredLastName"
+      />
+    </p>
+    <p>
+      <label for="email">E-mailadres</label>
+      <input type="text" id="email" name="email" [(ngModel)]="enteredEmail" />
+    </p>
+
+    <p>
+      <label for="password">Wachtwoord</label>
+      <input
+        type="text"
+        id="password"
+        name="password"
+        [(ngModel)]="enteredPassword"
+      />
+    </p>
+    @if(!validPassword()) {
+    <ul>
+      <li>Wachtwoord moet tussen 10 en 25 tekens lang zijn.</li>
+      <li>Wachtwoord moet minstens één cijfer bevatten.</li>
+      <li>Wachtwoord moet minstens één kleine letter bevatten.</li>
+      <li>Wachtwoord moet minstens één hoofdletter bevatten.</li>
+      <li>Wachtwoord moet minstens één speciaal teken bevatten.</li>
+    </ul>
+    } @if(!validInputs()){
+    <p class="warning">Vul alle velden in</p>
+    }
+
+    <p class="actions">
+      <a routerLink="../">Cancel</a>
+      <button type="submit">Register</button>
+    </p>
+  </form>
+</div>

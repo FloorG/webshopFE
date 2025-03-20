@@ -1,0 +1,24 @@
+<div class="login">
+  <h2>Log hier in</h2>
+  <form>
+    <p>
+      <label for="email">E-mailadres</label>
+      <input type="text" id="email" name="email" [(ngModel)]="enteredEmail" />
+    </p>
+
+    <p>
+      <label for="password">Wachtwoord</label>
+      <input
+        type="text"
+        id="password"
+        name="password"
+        [(ngModel)]="enteredPassword"
+      />
+    </p>
+
+    <p class="actions">
+      <a routerLink="../">Cancel</a>
+      <button type="submit">Login</button>
+    </p>
+  </form>
+</div>
